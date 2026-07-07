@@ -1,6 +1,6 @@
 const prompt = require("prompt-sync")();
 
-async function buscaPokemon() {
+async function preguntaPokemon() {
     const userPokemon = prompt("Cual pokemon quieres buscar?").toLowerCase();
     const respuestaApi = await fetch ("https://pokeapi.co/api/v2/pokemon/" + userPokemon);
     if (!respuestaApi.ok) {
@@ -13,7 +13,8 @@ async function buscaPokemon() {
 
     console.log("\n*********** PRELIMINARES ***********")
     console.log(`Estado respuesta: ${respuestaApi.status} ${respuestaApi.statusText} `)
-    //console.log(datosPokemon);  
+    console.log("\n***********Archivo JSON**********")
+    console.log(datosPokemon);  
 
 
     console.log("\n\n\n\n*********** EJERCICIO 1 ***********");    
@@ -32,4 +33,4 @@ async function buscaPokemon() {
     
 }
 
-buscaPokemon();
+preguntaPokemon();
