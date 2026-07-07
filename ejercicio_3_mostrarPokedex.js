@@ -17,11 +17,10 @@ async function  buscarPokemon(pokemon) {
         return null;
     }  
     return await responseApi.json();  
-
 }
 
 async function mostrarFicha(objetoPokemon) {
-    objetoPokemon = await buscarPokemon();
+    objetoPokemon = await buscarPokemon(objetoPokemon);
     if (objetoPokemon === null){
         console.log("No hay informacion para mostar");
         return;
@@ -53,4 +52,6 @@ async function mostrarFicha(objetoPokemon) {
 }
 
 mostrarFicha();
+//Por que es util que las funciones esten separadas? Es util por que si se requiere cambiar algun dato solo se debe hacer cambios en la funcion sin que pueda llegar a afectar el resto del codigo, de esta forma se facilita el mantenimiento. 
+
 
